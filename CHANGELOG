@@ -1,0 +1,107 @@
+Legend:
++ Added feature
+* Improved/changed feature
+- Bug fixed
+! Known issue / missing feature
+
+0.6.6 - 2023-9-18
+  - Minor fix in cleanup code.
+
+0.6.5 - 2022-07-30
+  - bug count of time
+  - call to resolver_init being done unnecessarily in some cases
+  - lost connection stats on updates
+  * using hashtable in search of connections, by inode and tuple
+  * improvements file log.c
+
+0.6.3 - 2021-12-06
+  + add new color scheme
+  * improved timer of packets fragments
+  * internal timer now return in milliseconds instead of seconds
+  * moved code filter bpf to section rodata
+  * using dinamyc vector to manage conections of processes
+  - resolved possible buffoverflow in call readlink
+  - fix ncurses linkage in old systems
+
+0.6.2 - 2021-08-13
+  - fixed link ncurses on certain systems, LDLIBS in makefile, PR #2
+  - fixed when displaying process with long name, issue #5
+
+0.6.0 - 2021-08-03
+  - invalid interface argument handling
+  - cleanup on error cases
+  - automatic calculation of the size of the pid column
+  - incorrect sorting
+  - minor bug scroll horizontal
+  * using ncursesw instead of ncurses for better support for
+    ALTCHARSERT characters
+  * readjusting mmap socket values, improving consumed of memory
+  * automatic calculation size pad ncurses, improving consumed of memory
+  * improved dns resolver, now uses thread pool and hashtable, improving the
+    use of system recursions
+  * using hashtable implementation in search of processes
+
+0.5.5 - 2021-02-23
+  - connection port number was being displayed incorrectly
+  - fixed bug that was not translated to port for a service name, bug since
+    version 0.3.1
+  * show the name of the process and its arguments
+  + implemented mode verbose, that alse show process whitout traffic
+  + added man page
+
+0.5.0 - 2021-02-12
+  - bin folder not present (necessary to compilation)
+  * header information show more fast
+  + option -f, allows save process statistics to a file
+  + header now reports total rate pps and total rate bps
+
+0.4.4 - 2020-11-13
+   + general information at the top of the screen
+   * scroll using arrow keys
+
+0.4.3 - 2020-09-13
+  + simultaneous tracking of TCP and UDP protocols
+
+0.4.2 - 2020-08-13
+  + show interface associate with conection
+  * improved consult dns, now no cause delay in application
+  * improved management of memory
+  * cpu usage, extended numbers of blocks, frames per blocks and len each
+    frame from mmap ring
+  * cpu usage, decreasing update frequency of processes
+  * filter bpf, now support interface tun
+
+0.4.1 - 2020-06-21
+  - bug fix that close program when screen on resized
+
+0.4.0 - 2020-06-20
+  * improvements interface user:
+      colors;
+      scroll horizontal and vertial;
+      sort by columns;
+  * improved CPU usage using socket mmap with TPACKET_V3 and poll
+  * traffic no necessary discarded with filter BPF
+  * check necessary update process more eficient in mode udp
+  - check argument '-i' improved
+  - statistics conections storage
+  + statistics total bytes/bits TX and RX
+
+0.3.1 - 2020-05-25
+  + translate of host and service
+  * improved parse of options, now code is more readble and checking of
+    parameters is best
+  * updated [options] of README
+  - minor change of function copy_conections in process.c
+
+0.2.0 - 2020-05-22
+  + individual statistics by connections, option '-c'
+  * show a error when invalid argument was passed, function parte
+   _options in main.c
+  * changed the display layout, moved column program to last
+  * program column width calculated "automatically"
+
+0.1.6 - 2020-05-18
+  - limited the maximum size to be displayed for the process name.
+  * translated into english the help message
+  ! IPv6 support
+  ! individual statistics by connections
